@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
             //REALIZA O CALCULO E RETORNA A MENSAGEM FILTRADA PARA A TELA
             protected String realizaCalculoRetornaMensagem() {
-                double peso = Double.parseDouble(edtPeso.getText().toString().replace(",", "."));
-                double altura = Double.parseDouble(edtAltura.getText().toString().replace(",", "."));
+                double peso = edtPeso.getText().length()>0?Double.parseDouble(edtPeso.getText().toString().replace(",", ".")):0;
+                double altura = edtAltura.getText().length()>0?Double.parseDouble(edtAltura.getText().toString().replace(",", ".")):0;
                 double resultado = peso / (altura * altura);
                 return RetornaMensagemIMC(resultado);
 
